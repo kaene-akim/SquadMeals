@@ -1,0 +1,18 @@
+from app.models.models import (  # noqa: F401
+    CookingSession,
+    Group,
+    GroupJoinRequest,
+    GroupMember,
+    GroupMessage,
+    Ingredient,
+    MealPlan,
+    MealPlanRecipe,
+    MealPlanVote,
+    Recipe,
+    RecipeIngredient,
+    ShoppingAssignment,
+    ShoppingItem,
+    Store,
+    StoreProduct,
+    User,
+)

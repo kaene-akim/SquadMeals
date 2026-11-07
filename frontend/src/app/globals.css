@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --surface-2: #f0ede6;
+  --ink: #18211d;
+  --muted: #5f6b64;
+  --line: #d9d3c7;
+  --brand: #1f6a5b;
+  --brand-ink: #ffffff;
+  --brand-soft: #e4f1ee;
+  --accent: #c96a2b;
+  --accent-soft: #fbefe6;
+  --danger: #b42318;
+  --danger-soft: #feeceb;
+  --ok: #1f7a4d;
+  --shadow: 0 8px 24px rgba(24, 33, 29, 0.06);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+::selection { background: var(--brand-soft); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+a { color: inherit; }
+input, select, textarea, button { font: inherit; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border-radius: 10px; padding: 0.6rem 0.95rem; font-weight: 600; font-size: 0.92rem;
+  border: 1px solid transparent; cursor: pointer; transition: background-color 160ms, border-color 160ms, transform 160ms;
+}
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-primary { background: var(--brand); color: var(--brand-ink); }
+.btn-primary:hover:not(:disabled) { background: #19584c; }
+.btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn-secondary:hover:not(:disabled) { background: var(--surface-2); }
+.btn-danger { background: var(--danger-soft); color: var(--danger); border-color: #f3c7c3; }
+.field {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 0.65rem 0.8rem;
+  background: var(--surface); color: var(--ink);
+}
+.field::placeholder { color: #8a948f; }
+.label { display: block; font-size: 0.84rem; font-weight: 600; color: var(--muted); margin-bottom: 0.35rem; }
+.pill { display: inline-flex; align-items: center; border-radius: 999px; padding: 0.2rem 0.55rem; font-size: 0.76rem; font-weight: 600; background: var(--surface-2); color: var(--muted); }
+.pill-brand { background: var(--brand-soft); color: var(--brand); }
+.pill-accent { background: var(--accent-soft); color: #8a4317; }
+.muted { color: var(--muted); }
